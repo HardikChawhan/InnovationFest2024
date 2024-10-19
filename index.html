@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>INNOVATION FEST 2024 | Registration form</title>
+</head>
+
+<body>
+  <div class="logo_container">
+    <img class="logo" src="logo.jpg">
+  </div>
+  <div class="container">
+    <h1>INNOVATION FEST 2024</h1>
+    <form>
+      <label for="category">Participation Category <span class="required">*</span>:</label>
+      <select id="category" name="category" required>
+        <option value="">Select a category</option>
+        <option value="creative-design">Creative Design and UX (Max 2)</option>
+        <option value="technical-project">Technical Project Exhibition (Max 4)</option>
+        <option value="innovative-startup">Innovative Startup Ideas (Max 4)</option>
+        <option value="web-design">Web Designing (Max 4)</option>
+        <option value="blind-coding">Blind Coding (Max 4)</option>
+      </select>
+
+      <label for="project-title">Project Title:</label>
+      <input type="text" id="project-title" name="project-title" placeholder="Enter Project Title">
+
+      <label for="team-lead-name">Name of Team Lead <span class="required">*</span>:</label>
+      <input type="text" id="team-lead-name" name="team-lead-name" placeholder="Enter Name of Team Lead" required>
+
+      <label for="lead-mobile">Mobile Number of Team Lead <span class="required">*</span>:</label>
+      <input type="tel" id="lead-mobile" name="lead-mobile" placeholder="Enter Mobile Number" required>
+
+      <label for="lead-email">Email ID of Team Lead <span class="required">*</span>:</label>
+      <input type="email" id="lead-email" name="lead-email" placeholder="Enter Email ID" required>
+
+      <label for="lead-institute">Institute Name of Team Lead <span class="required">*</span>:</label>
+      <input type="text" id="lead-institute" name="lead-institute" placeholder="Enter Institute Name" required>
+
+      <label for="member1-name">Name of Team Member 1:</label>
+      <input type="text" id="member1-name" name="member1-name" placeholder="Enter Name of Team Member 1">
+
+      <label for="member1-mobile">Mobile Number of Team Member 1:</label>
+      <input type="tel" id="member1-mobile" name="member1-mobile" placeholder="Enter Mobile Number">
+
+      <label for="member1-email">Email ID of Team Member 1:</label>
+      <input type="email" id="member1-email" name="member1-email" placeholder="Enter Email ID">
+
+      <label for="member1-institute">Institute Name of Team Member 1:</label>
+      <input type="text" id="member1-institute" name="member1-institute" placeholder="Enter Institute Name">
+
+      <label for="member2-name">Name of Team Member 2:</label>
+      <input type="text" id="member2-name" name="member2-name" placeholder="Enter Name of Team Member 2">
+
+      <label for="member2-mobile">Mobile Number of Team Member 2:</label>
+      <input type="tel" id="member2-mobile" name="member2-mobile" placeholder="Enter Mobile Number">
+
+      <label for="member2-email">Email ID of Team Member 2:</label>
+      <input type="email" id="member2-email" name="member2-email" placeholder="Enter Email ID">
+
+      <label for="member2-institute">Institute Name of Team Member 2:</label>
+      <input type="text" id="member2-institute" name="member2-institute" placeholder="Enter Institute Name">
+
+      <label for="member3-name">Name of Team Member 3:</label>
+      <input type="text" id="member3-name" name="member3-name" placeholder="Enter Name of Team Member 3">
+
+      <label for="member3-mobile">Mobile Number of Team Member 3:</label>
+      <input type="tel" id="member3-mobile" name="member3-mobile" placeholder="Enter Mobile Number">
+
+      <label for="member3-email">Email ID of Team Member 3:</label>
+      <input type="email" id="member3-email" name="member3-email" placeholder="Enter Email ID">
+
+      <label for="member3-institute">Institute Name of Team Member 3:</label>
+      <input type="text" id="member3-institute" name="member3-institute" placeholder="Enter Institute Name">
+
+      <label for="member4-name">Name of Team Member 4:</label>
+      <input type="text" id="member4-name" name="member4-name" placeholder="Enter Name of Team Member 4">
+
+      <label for="member4-mobile">Mobile Number of Team Member 4:</label>
+      <input type="tel" id="member4-mobile" name="member4-mobile" placeholder="Enter Mobile Number">
+
+      <label for="member4-email">Email ID of Team Member 4:</label>
+      <input type="email" id="member4-email" name="member4-email" placeholder="Enter Email ID">
+
+      <label for="member4-institute">Institute Name of Team Member 4:</label>
+      <input type="text" id="member4-institute" name="member4-institute" placeholder="Enter Institute Name">
+
+      <label for="transaction-id">Transaction ID:</label>
+      <input type="text" id="transaction-id" name="transaction-id" placeholder="Enter Transaction ID" required>
+
+      <label for="screenshot">Upload Screenshot of the Registration Fees Paid:</label>
+      <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+
+      <img src="college_account.jpeg">
+
+      <button id="submitButton" type="submit">Submit Registration</button>
+      <button type="reset">Reset</button>
+    </form>
+  </div>
+
+  <div class="qodegen">
+    <p class="p">Powered by </p>
+    <img class="QodeGen_logo" src="QodeGen_logo.png">
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>
