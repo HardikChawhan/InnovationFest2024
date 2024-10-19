@@ -34,7 +34,8 @@ label {
   color: #555;
 }
 
-input, select {
+input,
+select {
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
@@ -99,12 +100,18 @@ button:hover {
 
 @media (max-width: 600px) {
   .container {
-      width: 90%;
-      margin: 20px auto;
-      padding: 15px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
   }
 
   button {
-      font-size: 14px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 630px) {
+  .container {
+    margin-bottom: 130px;
   }
 }
