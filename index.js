@@ -5,10 +5,38 @@ document.getElementById("submitButton").onclick = function (event) {
   const category = document.getElementById("category").value;
   const projectTitle = document.getElementById("project-title").value;
   const teamLeadName = document.getElementById("team-lead-name").value;
-  const leadMobile = document.getElementById("lead-mobile").value;
+  const leadMobile = document.getElementById("lead-mobile").value; // Moved up for validation
   const leadEmail = document.getElementById("lead-email").value;
   const leadInstitute = document.getElementById("lead-institute").value;
+  const transactionId = document.getElementById("transaction-id").value; // Collect transaction ID
 
+  // Check for required fields
+  if (!category || !projectTitle || !teamLeadName || !leadMobile || !leadEmail || !leadInstitute || !transactionId) {
+    alert("Please fill in all required fields."); // Alert if required fields are missing
+    return; // Stop further execution
+  }
+
+  // Determine project ID based on the selected category
+  let projectid = 0;
+  switch (category) {
+    case 'creative-design':
+      projectid = 2;
+      break;
+    case 'technical-project':
+      projectid = 3;
+      break;
+    case 'innovative-startup':
+      projectid = 4;
+      break;
+    case 'web-design':
+      projectid = 5;
+      break;
+    case 'blind-coding':
+      projectid = 1;
+      break;
+  }
+
+  // Create member objects
   const member1 = {
     name: document.getElementById("member1-name").value,
     mobile: document.getElementById("member1-mobile").value,
@@ -37,9 +65,33 @@ document.getElementById("submitButton").onclick = function (event) {
     institute: document.getElementById("member4-institute").value,
   };
 
-  const transactionId = document.getElementById("transaction-id").value;
+  // Fetch request to generate QR code
+  fetch('http://192.168.29.31:5000/generate_qr', {
+    method: 'POST',
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      project_category: category,
+      title: projectTitle,
+      team_lead: teamLeadName,
+      institute: leadInstitute,
+      email: leadEmail,
+      mobile: leadMobile,
+      pid: projectid,
+      transaction_id: transactionId,
+      members: [member1, member2, member3, member4]
+    }),
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+    alert('QR code generated successfully!');
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    alert('An error occurred while generating the QR code.');
+  });
 
-  // Log the collected data
+  // Log the collected data (if needed)
   console.log({
     category,
     projectTitle,
