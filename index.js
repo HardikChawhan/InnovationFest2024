@@ -19,19 +19,19 @@ document.getElementById("submitButton").onclick = function (event) {
   // Determine project ID based on the selected category
   let projectid = 0;
   switch (category) {
-    case 'creative-design':
+    case 'Creative Design':
       projectid = 2;
       break;
-    case 'technical-project':
+    case 'Technical Project':
       projectid = 3;
       break;
-    case 'innovative-startup':
+    case 'Innovative Startup':
       projectid = 4;
       break;
-    case 'web-design':
+    case 'Web Design':
       projectid = 5;
       break;
-    case 'blind-coding':
+    case 'Blind Coding':
       projectid = 1;
       break;
   }
@@ -57,16 +57,31 @@ document.getElementById("submitButton").onclick = function (event) {
     email: document.getElementById("member3-email").value,
     institute: document.getElementById("member3-institute").value,
   };
-
+  
   const member4 = {
     name: document.getElementById("member4-name").value,
     mobile: document.getElementById("member4-mobile").value,
     email: document.getElementById("member4-email").value,
     institute: document.getElementById("member4-institute").value,
   };
-
+  
+  console.log({
+    category,
+    projectTitle,
+    teamLead: {
+      name: teamLeadName,
+      mobile: leadMobile,
+      email: leadEmail,
+      institute: leadInstitute,
+    },
+    member1,
+    member2,
+    member3,
+    member4,
+    transactionId,
+  });
   // Fetch request to generate QR code
-  fetch('http://192.168.29.31:5000/generate_qr', {
+  fetch('https://5e6f-43-205-239-15.ngrok-free.app/generate_qr', {
     method: 'POST',
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -75,10 +90,7 @@ document.getElementById("submitButton").onclick = function (event) {
       team_lead: teamLeadName,
       institute: leadInstitute,
       email: leadEmail,
-      mobile: leadMobile,
       pid: projectid,
-      transaction_id: transactionId,
-      members: [member1, member2, member3, member4]
     }),
   })
   .then(response => response.json())
@@ -92,16 +104,4 @@ document.getElementById("submitButton").onclick = function (event) {
   });
 
   // Log the collected data (if needed)
-  console.log({
-    category,
-    projectTitle,
-    teamLead: {
-      name: teamLeadName,
-      mobile: leadMobile,
-      email: leadEmail,
-      institute: leadInstitute,
-    },
-    members: [member1, member2, member3, member4],
-    transactionId,
-  });
 };
